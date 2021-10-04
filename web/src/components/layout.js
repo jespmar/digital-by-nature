@@ -5,13 +5,14 @@ import "../styles/layout.css";
 import * as styles from "./layout.module.css";
 import { Link } from "gatsby";
 
-const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
+const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, logo }) => (
   <>
     <Header
       siteTitle={siteTitle}
       onHideNav={onHideNav}
       onShowNav={onShowNav}
       showNav={showNav}
+      logo={logo}
     />
     <div className={styles.content}>{children}</div>
     <footer className="w-full bg-gray-700 text-white">
