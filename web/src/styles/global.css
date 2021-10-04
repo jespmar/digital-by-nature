@@ -1,0 +1,15 @@
+/* ./src/styles/global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+
+
+.logo {
+    font-family: 'DM Mono', monospace;
+}
+
+.nav-bg {
+    background-color: rgba(255, 255, 255, 0.8);
+}

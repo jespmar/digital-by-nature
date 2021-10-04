@@ -3,6 +3,7 @@ import Header from "./header";
 
 import "../styles/layout.css";
 import * as styles from "./layout.module.css";
+import { Link } from "gatsby";
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
   <>
@@ -13,13 +14,11 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
       showNav={showNav}
     />
     <div className={styles.content}>{children}</div>
-    <footer className={styles.footer}>
-      <div className={styles.footerWrapper}>
-        <div className={styles.siteInfo}>
-          &copy; {new Date().getFullYear()}, Built with{" "}
-          <a href="https://www.sanity.io">Sanity</a> &amp;{" "}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </div>
+    <footer className="w-full bg-gray-700 text-white">
+      <div className="w-full flex h-60">
+      <div className="text-xl logo self-center text-center mx-auto">
+        <Link to="/">{siteTitle}</Link>
+      </div>
       </div>
     </footer>
   </>
