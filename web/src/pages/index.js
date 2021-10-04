@@ -39,6 +39,11 @@ export const query = graphql`
       title
       description
       keywords
+      logo {
+        asset {
+          url
+        }
+      }
     }
     posts: allSanityPost(
       limit: 6
@@ -89,7 +94,7 @@ const IndexPage = (props) => {
   }
 
   return (
-    <Layout>
+    <Layout logo={site.logo.asset.url}>
       <SEO
         title={site.title}
         description={site.description}

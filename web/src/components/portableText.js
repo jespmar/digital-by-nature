@@ -1,14 +1,15 @@
 import React from "react";
-import clientConfig from "../../client-config";
-import BasePortableText from "@sanity/block-content-to-react";
-import serializers from "./serializers";
+import Content from "./content";
+import Image from "./image";
 
-const PortableText = ({ blocks }) => (
-  <BasePortableText
-    blocks={blocks}
-    serializers={serializers}
-    {...clientConfig.sanity}
-  />
-);
+const PortableText = ({ blocks }) => {
+  //console.log(blocks);
+  return blocks.map((block) => {
+    if (block._type === "block") return <Content key={block._key} {...block} />;
+    if (block._type === "mainImage")
+      return <Image key={block._key} {...block} />;
+    else return null;
+  });
+};
 
 export default PortableText;
