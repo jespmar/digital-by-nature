@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./header";
+import WhoAmI from "./whoAmI"
 
 import "../styles/layout.css";
 import * as styles from "./layout.module.css";
@@ -14,8 +15,8 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, logo }) =>
       showNav={showNav}
       logo={logo}
     />
-    <div className={styles.content}>{children}</div>
-    <footer className="w-full bg-gray-700 text-white">
+    <div className="dark:bg-gray-950 dark:text-white">{children}</div>
+    <footer className="w-full bg-gray-850 text-white">
       <div className="w-full flex h-60">
       <div className="text-xl logo self-center text-center mx-auto">
         <Link to="/">{siteTitle}</Link>

@@ -14,7 +14,7 @@ function BlogPostPreview(props) {
       className={props.isInList ? styles.inList : styles.inGrid}
       to={getBlogUrl(props.publishedAt, props.slug.current)}
     >
-      <div className={styles.leadMediaThumb}>
+      <div className="rounded">
         {props.mainImage && props.mainImage.asset && (
           <img
             src={imageUrlFor(buildImageObj(props.mainImage))
@@ -23,6 +23,7 @@ function BlogPostPreview(props) {
               .auto("format")
               .url()}
             alt={props.mainImage.alt}
+            className="rounded-md"
           />
         )}
       </div>

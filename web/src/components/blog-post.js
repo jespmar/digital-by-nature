@@ -18,8 +18,10 @@ function BlogPost(props) {
   } = props;
   return (
     <article className={styles.root}>
-      {mainImage && mainImage.asset && (
-        <div className={styles.mainImage}>
+      <div className="w-full dark:bg-gray-950 p-3">
+        <div className="w-full max-w-7xl mx-auto">
+        {mainImage && mainImage.asset && (
+        <div>
           <img
             src={imageUrlFor(buildImageObj(mainImage))
               .width(1200)
@@ -28,9 +30,13 @@ function BlogPost(props) {
               .auto("format")
               .url()}
             alt={mainImage.alt}
+            className="rounded-lg shadow-lg"
           />
         </div>
       )}
+        </div>
+      </div>
+
       <Container>
         <div className={styles.grid}>
           <div className={styles.mainContent}>

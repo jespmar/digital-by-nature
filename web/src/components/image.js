@@ -18,7 +18,7 @@ import serializers from "./serializers"; */
 const Image = (image) => {
   //console.log(block);
 
-  return <img className="p-2 rounded" src={image.asset.url} />;
+  return <img className="mb-2 shadow-lg rounded" src={image.asset.url} />;
 };
 
 export default Image;

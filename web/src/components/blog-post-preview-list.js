@@ -6,7 +6,7 @@ import React from "react";
 function BlogPostPreviewGrid(props) {
   return (
     <div className={styles.root}>
-      {props.title && <h2 className="text-3xl font-mono mb-10 underline uppercase text-center">{props.title}</h2>}
+      {props.title && <h2 className="text-2xl font-mono mb-10 text-center">{props.title}</h2>}
       <ul className={styles.grid}>
         {props.nodes &&
           props.nodes.map((node) => (
