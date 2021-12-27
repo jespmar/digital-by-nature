@@ -21,6 +21,11 @@ export default {
       title: "Logo",
     },
     {
+      name: "whoAmI",
+      type: "bodyPortableText",
+      title: "Who am I?"
+    },
+    {
       name: "keywords",
       type: "array",
       title: "Keywords",

@@ -40,6 +40,7 @@ export const query = graphql`
       title
       description
       keywords
+      _rawWhoAmI
       logo {
         asset {
           url
@@ -94,6 +95,8 @@ const IndexPage = (props) => {
     );
   }
 
+  console.log(site)
+
   return (
     <Layout logo={site.logo.asset.url}>
       <SEO
@@ -101,7 +104,7 @@ const IndexPage = (props) => {
         description={site.description}
         keywords={site.keywords}
       />
-      <WhoAmI />
+      <WhoAmI data={site._rawWhoAmI} />
       <Container>
         {postNodes && (
           <BlogPostPreviewList

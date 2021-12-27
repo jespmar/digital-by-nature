@@ -1,18 +1,19 @@
 import React from "react";
+import PortableText from "./portableText";
 
 
 
-const WhoAmI = () => {
+const WhoAmI = ({data}) => {
+
+console.log(data)
+
   return (
-    <div className="w-full bg-gray-100 dark:bg-white p-2 text-black">
-    <div className="max-w-4xl mx-auto flex">
-      <div className="w-3/4 p-5">
-        <p className="text-2xl font-semibold">Who am I?</p>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dui lectus, tempus in arcu in, ornare vehicula leo. Vestibulum congue turpis ut eleifend blandit. Ut et nisi sapien. Nulla convallis iaculis tincidunt. Sed imperdiet dignissim magna, ut bibendum lorem dictum a. Ut in lacus purus. Aenean nec lorem est. Vestibulum commodo tempor laoreet.
-        </p>
+    <div className="w-full bg-gray-100 border-t border-b border-indigo-600 dark:border-gray-800 dark:bg-white p-2 text-black">
+    <div className="max-w-6xl mx-auto flex">
+      <div className="w-full p-5">
+        <p className="text-2xl font-semibold">Who am I, And what am I doing?</p>
+        {data && <PortableText blocks={data} />}
       </div>
-      <div className="w-1/4"></div>
     </div>
   </div>
   );
