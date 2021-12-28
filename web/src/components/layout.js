@@ -19,7 +19,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, logo }) =>
     <footer className="w-full bg-gray-850 text-white">
       <div className="w-full flex h-60">
       <div className="text-xl logo self-center text-center mx-auto">
-        <Link to="/">{siteTitle}</Link>
+        <Link className="border-b-2 border-indigo-700" to="/">{siteTitle}</Link>
       </div>
       </div>
     </footer>
