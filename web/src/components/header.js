@@ -5,6 +5,7 @@ import { cn } from "../lib/helpers";
 
 import * as styles from "./header.module.css";
 import { StaticImage } from "gatsby-plugin-image";
+import MobileMenu from "./mobileMenu";
 
 const width = 200
 
@@ -24,13 +25,17 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, logo }) => (
       </div>
 
       <button
-        className={styles.toggleNavButton}
+        className="flex md:hidden my-auto text-4xl"
         onClick={showNav ? onHideNav : onShowNav}
       >
         <Icon symbol="hamburger" />
       </button>
 
     </div>
+    {showNav && <MobileMenu 
+      onHideNav={onHideNav}
+      onShowNav={onShowNav}
+      showNav={showNav} />}
   </div>
 );
 
