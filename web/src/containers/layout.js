@@ -11,7 +11,13 @@ const query = graphql`
           url
         }
       }
+    },
+  navigation: sanityNavigation {
+    navLinks {
+      displayName
+      route
     }
+  }
   }
 `;
 
@@ -40,6 +46,7 @@ function LayoutContainer(props) {
       siteTitle={data.site.title}
       onHideNav={handleHideNav}
       onShowNav={handleShowNav}
+      navLinks={data.navigation.navLinks}
       logo={data.site.logo.asset.url}
     />
   );

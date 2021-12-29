@@ -6,13 +6,14 @@ import "../styles/layout.css";
 import * as styles from "./layout.module.css";
 import { Link } from "gatsby";
 
-const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, logo }) => (
+const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, logo, navLinks }) => (
   <>
     <Header
       siteTitle={siteTitle}
       onHideNav={onHideNav}
       onShowNav={onShowNav}
       showNav={showNav}
+      navLinks={navLinks}
       logo={logo}
     />
     <div className="dark:bg-gray-950 dark:text-white">{children}</div>

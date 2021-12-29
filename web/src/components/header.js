@@ -9,7 +9,7 @@ import MobileMenu from "./mobileMenu";
 
 const width = 200
 
-const Header = ({ onHideNav, onShowNav, showNav, siteTitle, logo }) => (
+const Header = ({ onHideNav, onShowNav, showNav, siteTitle, logo, navLinks }) => (
   <div className="bg-white w-full border dark:border-opacity-0 z-10 blur-lg dark:bg-gray-850 dark:text-white px-4">
     <div className="w-full max-w-7xl flex mx-auto justify-between h-40">
 <div className="flex w-1/3">
@@ -17,10 +17,10 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, logo }) => (
         <Link to="/">{siteTitle}</Link>
       </div>
 </div>
-      <div className="hidden justify-around w-1/3 md:flex">
-        <button className="mx-2 font-mono uppercase hover:underline">Home</button>
-        <button className="mx-2 font-mono uppercase hover:underline">Blog</button>
-        <button className="mx-2 font-mono uppercase hover:underline">About Me</button>
+      <div className="hidden self-center justify-around w-1/3 md:flex">
+        {navLinks.map((nav) => {
+          return <Link className="mx-2 self-center font-mono uppercase hover:underline" to={nav.route}>{nav.displayName}</Link>
+        })}
 
       </div>
 
@@ -35,6 +35,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, logo }) => (
     {showNav && <MobileMenu 
       onHideNav={onHideNav}
       onShowNav={onShowNav}
+      navLinks={navLinks}
       showNav={showNav} />}
   </div>
 );
