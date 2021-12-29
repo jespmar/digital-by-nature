@@ -6,6 +6,7 @@ import Layout from "../containers/layout";
 import Container from "../components/container";
 import SEO from "../components/seo";
 import { toPlainText } from "../lib/helpers";
+import PageSection from "../components/pageSection";
 
 export const newQuery = graphql`
   query customQuery($id: String!) {
@@ -28,8 +29,15 @@ const PageTemplate = (props) => {
   console.log({page})
   return (
     <Layout>
+      <div className="w-full h-full p-4">
+        <div className="w-full max-w-6xl mx-auto">
+          <div className="font-mono text-3xl w-full border-b-4 border-indigo-600 pb-4 text-center mb-4">{page.title}</div>
+          {page && page._rawSections.map((section) => {
+        return <PageSection key={section._key} props={section} />
+      })}
+          </div>
+      </div>
 
-      <div>{page.title} - route: {page.route.current}</div>
     </Layout>
   );
 };

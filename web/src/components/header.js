@@ -10,7 +10,7 @@ import MobileMenu from "./mobileMenu";
 const width = 200
 
 const Header = ({ onHideNav, onShowNav, showNav, siteTitle, logo }) => (
-  <div className="bg-white w-full border dark:border-opacity-0 z-10 blur-lg shadow-xl dark:bg-gray-850 dark:text-white px-4">
+  <div className="bg-white w-full border dark:border-opacity-0 z-10 blur-lg dark:bg-gray-850 dark:text-white px-4">
     <div className="w-full max-w-7xl flex mx-auto justify-between h-40">
 <div className="flex w-1/3">
 <div className="text-3xl logo self-center text-center text-gray-800 dark:text-white border-b-4 border-indigo-600 p-2">
