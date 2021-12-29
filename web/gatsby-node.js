@@ -31,6 +31,7 @@ async function createBlogPostPages(graphql, actions) {
 
   const postEdges = (result.data.allSanityPost || {}).edges || [];
 
+
   postEdges
     .filter((edge) => !isFuture(new Date(edge.node.publishedAt)))
     .forEach((edge) => {
@@ -46,6 +47,49 @@ async function createBlogPostPages(graphql, actions) {
     });
 }
 
+
+async function createPages(graphql, actions) {
+  console.log("Creating pages")
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityPages {
+        edges {
+          node {
+            title
+            id
+            route {
+              _key
+              _type
+              current
+            }
+            _id
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const pageEdges = (result.data.allSanityPages || {}).edges || [];
+  console.log(pageEdges)
+
+  pageEdges
+    .forEach((edge) => {
+      const { id, route = {}} = edge.node;
+      const path = `${route.current}/`;
+
+      createPage({
+        path,
+        component: require.resolve(`./src/templates/page-template.js`),
+        context: { id },
+      });
+    });
+}
+
+
 exports.createPages = async ({ graphql, actions }) => {
   await createBlogPostPages(graphql, actions);
+  await createPages(graphql, actions);
 };

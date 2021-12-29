@@ -1,3 +1,17 @@
+
+
+const slugify = input => input
+.toLowerCase()
+.replace(/\s+/g, '-')
+.slice(0, 200)
+
+const makeRoute = async (input, type) => {
+
+    const slug = slugify(input)
+    return `/${slug}`
+
+}
+
 export default {
     name: "pages",
     type: "document",
@@ -10,16 +24,21 @@ export default {
       },
       {
         name: "route",
-        type: "string",
+        type: "slug",
         title: "Route",
-        description: "the page route",
+        description:
+          "The page route",
+        options: {
+          source: "title",
+          maxLength: 96,
+          slugify: makeRoute
+        },
       },
-
       {
         title: 'Sections',
         name: 'sections',
         type: 'array',
-        of: [{type: 'contentSection'}]
+        of: [{type: 'contentSection'},{type: 'category'}]
       },
       
 
