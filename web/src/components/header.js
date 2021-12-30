@@ -19,7 +19,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, logo, navLinks }) =>
 </div>
       <div className="hidden self-center justify-around w-1/3 md:flex">
         {navLinks && navLinks.map((nav) => {
-          return <Link className="mx-2 self-center font-mono uppercase hover:underline" to={nav.route}>{nav.displayName}</Link>
+          return <Link key={nav.route} className="mx-2 self-center font-mono uppercase hover:underline" to={nav.route}>{nav.displayName}</Link>
         })}
 
       </div>

@@ -30,14 +30,9 @@ const PageTemplate = (props) => {
   return (
     <Layout>
       <SEO title={page.title}></SEO>
-      <div className="w-full h-full p-4">
-      <div className="font-mono text-3xl w-full max-w-6xl mx-auto border-b-4 border-indigo-600 pb-4 text-center mb-4">{page.title}</div>
-        <div className="w-full max-w-4xl mx-auto">
-          {page && page._rawSections.map((section) => {
+      {page && page._rawSections.map((section) => {
         return <PageSection key={section._key} props={section} />
       })}
-          </div>
-      </div>
 
     </Layout>
   );

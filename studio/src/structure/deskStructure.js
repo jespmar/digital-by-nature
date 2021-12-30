@@ -1,5 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
-import { MdSettings } from "react-icons/md";
+import { MdHome, MdSettings } from "react-icons/md";
 import { MdPerson, MdDescription, MdLocalOffer, MdWeb } from "react-icons/md";
 import IframePreview from "../previews/IframePreview";
 
@@ -60,6 +60,15 @@ export default () =>
               .id("navigation")
               .schemaType("navigation")
               .documentId("navigation")
+          ),
+          S.listItem()
+          .title("Home Page")
+          .icon(MdHome)
+          .child(
+            S.editor()
+              .id("home")
+              .schemaType("pages")
+              .documentId("home")
           ),
       S.divider(),
       S.listItem()

@@ -20,6 +20,7 @@ import pages from "./documents/pages";
 import contentSection from "./objects/contentSection";
 import navLink from "./objects/navLink";
 import navigation from "./documents/navigation";
+import header from "./objects/header";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -42,7 +43,8 @@ export default createSchema({
     pages,
     contentSection,
     navLink,
-    navigation
+    navigation,
+    header
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

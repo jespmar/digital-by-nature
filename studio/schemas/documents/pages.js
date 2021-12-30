@@ -38,7 +38,9 @@ export default {
         title: 'Sections',
         name: 'sections',
         type: 'array',
-        of: [{type: 'contentSection'},{type: 'category'}]
+        of: [
+            {type: 'contentSection'},
+            {type: 'header'}]
       },
       
 
