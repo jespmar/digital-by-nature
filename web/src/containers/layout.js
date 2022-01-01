@@ -47,7 +47,7 @@ function LayoutContainer(props) {
       onHideNav={handleHideNav}
       onShowNav={handleShowNav}
       navLinks={data.navigation.navLinks}
-      logo={data.site?.logo.asset.url}
+      logo={data.site?.logo?.asset?.url}
     />
   );
 }
