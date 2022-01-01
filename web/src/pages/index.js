@@ -98,7 +98,7 @@ const IndexPage = (props) => {
   console.log(site)
 
   return (
-    <Layout logo={site.logo.asset?.url}>
+    <Layout logo={site.logo?.asset?.url}>
       <SEO
         title={site.title}
         description={site.description}
