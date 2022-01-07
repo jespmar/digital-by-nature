@@ -29,7 +29,7 @@ function BlogPostPreview(props) {
       </div>
       <div className="mb-10 border-b border-indigo-700 pb-5">
         <h3 className="text-4xl font-semibold leading-tight">{props.title}</h3>
-        <div className="text-sm text-indigo-500">
+        <div className="text-xl font-semibold text-indigo-500">
           {format(new Date(props.publishedAt), "MMMM Mo, yyyy")}
         </div>
         {props._rawExcerpt && (
